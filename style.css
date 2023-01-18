@@ -1,0 +1,85 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background: black; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.cont{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    padding: 80px 70px;
+}
+
+.cont__inner{
+    position: relative;
+    height: 100%;
+}
+
+.cont__inner:hover .el__bg:after{
+    opacity: 1;
+}
+
+.el{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 19.2%;
+    height: 100%;
+    background: #252525;
+    transition: transform 0.6s .0.7s , whidth 0.7s , opacity 0.6s 0.7s , z-index 0 1.3s;
+    will-change: transform, whidth , opacity;
+}
+
+.el:not(.s--active){
+    cursor: pointer;
+}
+
+.el__overflow{
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+.el__inner{
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    transition: transform 1s;
+}
+
+.cont.s--inactive .el__inner{
+    transform: translate3d(0, 100%, 0);
+}
+
+.el__bg{
+    position: absolute;
+    width: calc(100vw - 140px);
+    height: 100%;
+    transition: transform 0.6s 0.7s;
+    will-change: transform;
+}
+
+.el__bg::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -5%;
+    width: 100%;
+    height: 110%;
+    background-size: cover;
+    background-position: center center;
+    transition: transform 1s;
+    transform: translate3d(0 , 0 , 0) scale(1);
+}
+
+.cont.s--inactive .el__bg:before{
+
+
+}
+
